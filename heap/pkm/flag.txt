@@ -1,0 +1,1 @@
+flag{such_a_beautiful_exploit!just_a_single_zero_byte}
