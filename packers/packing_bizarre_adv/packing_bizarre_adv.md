@@ -9,16 +9,16 @@ Fourth is 0x55555555540c
 These are jumps that are useful to break to, as you can check the code and, in this order, are accessible, as the unpack routine has occurred.
 3) memdump.
 
-''' bash
+``` bash
 dump memory memdump 0x00005555555551b9 0x0000555555555369 
 dump memory memdump2 0x00005555555551b9 0x000055555555548e 
-'''
+```
 4) Patch the whole decode function with patcher.py
 5) Reverse engineer. Keep in mind that 16 bytes are needed, and Ghidra splits them in two variables that have to be concatenated. 
 
 Seems like there are two steps, and the found element is used as the decryption key for a second part. 
 
-''' c
+``` c
 X1_1 = 0x988a215bec73afb4;
     X1_2 = 0xef48e5cb65f245cf;
     local_38 = 0;
@@ -51,9 +51,9 @@ X1_1 = 0x988a215bec73afb4;
   else {
     puts(fail);
   }
-'''
+```
 
-''' python
+``` python
 # Given values in hexadecimal
 X1_1 = 0x988a215bec73afb4
 X1_2 = 0xef48e5cb65f245cf
@@ -81,6 +81,6 @@ flag_bytes = bytes([y1 ^ x1 for y1, x1 in zip(Y1_bytes, X1_bytes)]) + bytes([y2 
 # Convert the flag bytes to a string
 flag = flag_bytes.decode('utf-8', errors='ignore')
 flag, flag_bytes.hex()
-'''
+```
 
 FLAG: flag{y0ur_n3xt_s0lv3_1s...y7m3v}
