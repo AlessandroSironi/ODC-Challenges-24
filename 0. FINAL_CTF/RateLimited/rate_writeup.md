@@ -4,7 +4,7 @@ A race condition occurs in a computing system when the system's behavior is depe
 The goal of this challenge was to bypass the timing constraints on the likes of a post submitted by the user.
 
 ## Vulnerability
-In this case, the vulnerability that could be exploited from a Race Condition is the check of the timing of the likes, as the wait between one and the other was significantly high.
+In this case, the vulnerability that could be exploited from a Race Condition is the check of the timing of the likes, as the wait between one and the other was significantly high. However, the actual check required the other likes to have been already registered. 
 
 ## Exploit
 
@@ -15,7 +15,7 @@ The attached ```RateLimited.py``` is structured as follows:
     - Login
     - Post
     - Like
-    - ... and some utility functions to :
+    - ... and some utility functions to:
         - Generate random strings.
         - Find the correcty post...
         - ... and extract its ID.
