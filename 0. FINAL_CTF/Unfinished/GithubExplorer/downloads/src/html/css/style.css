@@ -1,0 +1,45 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    width: 100%;
+    position: fixed; /* Fix the header to the top of the page */
+    top: 0;
+    left: 0;
+    background-color: #fff; /* Change as needed */
+    z-index: 1000; /* Ensures the header stays above other content */
+}
+
+.main-container {
+    margin-top: 100px;
+    margin: 0 auto;
+    padding: 25% 25%;
+    padding-top: 100px; /* Add padding to account for the fixed header */
+    text-align: center; /* Center aligns the content */
+    box-sizing: border-box;
+}
+
+.header-content {
+    width: 60%;
+    margin: 0 auto;
+    padding: 1em 0; /* Adjust padding as needed */
+    text-align: center;
+}
+
+.logo h1 {
+    margin: 0; /* Removes default margin */
+}
+
+input::placeholder {
+  color: grey;
+  font-style: italic;
+}
+
+.break-word {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
