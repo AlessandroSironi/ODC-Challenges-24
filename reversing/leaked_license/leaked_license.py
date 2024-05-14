@@ -41,7 +41,7 @@ pwndbg> x/20gx $rsp
 
 the addresses pointed by the arrows indicate the memory that contains the part of the original license number
 
-we only need to change one for this to work, reiterate 5 times, flaggeroni
+we only need to change one for this to work, reiterate 5 times, flag
 
 """
 
